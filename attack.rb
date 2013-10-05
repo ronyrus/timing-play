@@ -11,7 +11,7 @@ def time_one_guess(guess, i, o)
   100.times do 
     t0 = Time.now
     i.puts "#{guess}\n"
-    line = o.readline()
+    o.readline()
     deltas << Time.now - t0
   end
 
@@ -30,7 +30,7 @@ Open3.popen3 './target' do |i, o|
     o.readline() # read the enter password prompt
 
     guess = "#{c}xxx"
-    time, output = time_one_guess(guess, i, o)
+    time = time_one_guess(guess, i, o)
 
     report[c] = time
     puts("%c %.9f" % [c, time])
