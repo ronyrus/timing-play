@@ -1,6 +1,6 @@
 #!/usr/bin/env ruby
 
-require 'Open3'
+require 'open3'
 require 'set'
 
 tgt_in, tgt_out = Open3.popen3 './target'
